@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TMDB_Demo</string>
+    <string name="password">密碼</string>
+    <string name="account">帳號</string>
+    <string name="appName">TMDB</string>
+    <string name="log_in">Log in</string>
 </resources>
