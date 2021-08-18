@@ -4,4 +4,6 @@
     <string name="account">帳號</string>
     <string name="appName">TMDB</string>
     <string name="log_in">Log in</string>
+    <string name="movie">movie</string>
+    <string name="drama">drama</string>
 </resources>

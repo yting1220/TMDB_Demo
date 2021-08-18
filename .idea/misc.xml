@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/Users/a4704/Documents/GitHub/TMDB_Demo/app/src/main/res/drawable/account_bg.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/a4704/Documents/GitHub/TMDB_Demo/app/src/main/res/drawable/google_signinbtn.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/a4704/Documents/GitHub/TMDB_Demo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/a4704/Documents/GitHub/TMDB_Demo/app/src/main/res/drawable/login_btn.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/a4704/Documents/GitHub/TMDB_Demo/app/src/main/res/layout/activity_login.xml" value="0.33" />
+=======
+        <entry key="..\:/Users/User/AndroidStudioProjects/TMDB_Demo/app/src/main/res/drawable/sl_tab_color.xml" value="0.12395833333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TMDB_Demo/app/src/main/res/layout/activity_tmdb.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TMDB_Demo/app/src/main/res/menu/navigation.xml" value="0.16666666666666666" />
+>>>>>>> Stashed changes
         <entry key="app/src/main/res/drawable/login_btn.xml" value="0.1361111111111111" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2831789781775808" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1798664830915139" />
