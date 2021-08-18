@@ -34,22 +34,23 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="match_parent"
+            android:layout_width="182dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:src="@drawable/user" />
 
         <EditText
-            android:id="@+id/input_accout"
+            android:id="@+id/input_account"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_weight="1"
             android:hint="@string/account"
             android:inputType="text"
             android:textAlignment="viewStart"
             android:textColor="@color/black"
             android:textColorHint="#ADADAD"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:backgroundTint="#6C6C6C" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,7 +62,7 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="match_parent"
+            android:layout_width="182dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:src="@drawable/password" />
@@ -76,7 +77,8 @@
             android:textAlignment="viewStart"
             android:textColor="@color/black"
             android:textColorHint="#ADADAD"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:backgroundTint="#6C6C6C"/>
 
     </LinearLayout>
 
@@ -93,5 +95,17 @@
         android:text="@string/log_in"
         android:textSize="20sp"
         android:textStyle="bold" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:background="@drawable/google_signinbtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:buttonSize="standard"
+        app:colorScheme="dark"/>
 
 </LinearLayout>
