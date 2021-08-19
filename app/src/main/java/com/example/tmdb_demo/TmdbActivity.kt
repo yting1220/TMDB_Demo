@@ -14,17 +14,29 @@ class TmdbActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tmdb)
 
+        Log.d(TAG, intent.getStringExtra("From").toString())
+
         val tmdbNavigation: BottomNavigationView = findViewById(R.id.tmdb_navigation)
 
         // Bottom Navigation
         tmdbNavigation.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_movie -> {
-                    Log.e(TAG, "MOVIE")
+                    Log.d(TAG, "MOVIE")
+                    val manager = supportFragmentManager
+                    val transaction = manager.beginTransaction()
+                    val movieFragment = MovieFragment()
+                    transaction.replace(R.id.fragment_holder, movieFragment).commit()
+                    transaction.addToBackStack(null)
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_drama -> {
-                    Log.e(TAG, "Drama")
+                    Log.d(TAG, "Drama")
+                    val manager = supportFragmentManager
+                    val transaction = manager.beginTransaction()
+                    val dramaFragment = DramaFragment()
+                    transaction.replace(R.id.fragment_holder, dramaFragment).commit()
+                    transaction.addToBackStack(null)
                     return@OnNavigationItemSelectedListener true
                 }
             }
