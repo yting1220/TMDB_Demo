@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        var loginBtn: Button = findViewById(R.id.login_btn)
+        var loginBtn: Button = findViewById(R.id.signin_btn)
 
         loginBtn.setOnClickListener(){
             startActivity(Intent(this@LoginActivity, TmdbActivity::class.java).putExtra("From", "LoginPage"))

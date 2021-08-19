@@ -39,18 +39,23 @@
             android:layout_weight="2"
             android:src="@drawable/user" />
 
-        <EditText
-            android:id="@+id/input_account"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:hint="@string/account"
-            android:inputType="text"
-            android:textAlignment="viewStart"
-            android:textColor="@color/black"
-            android:textColorHint="#ADADAD"
-            android:textSize="20sp"
-            android:backgroundTint="#6C6C6C" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_account"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="@string/account"
+                android:inputType="text"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textColorHint="#ADADAD"
+                android:textSize="20sp"
+                android:backgroundTint="#6C6C6C" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -74,8 +79,8 @@
             app:passwordToggleEnabled="true"
             android:id="@+id/input_password">
 
-            <EditText
-                android:id="@+id/password"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_text"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:backgroundTint="#6C6C6C"
@@ -85,7 +90,7 @@
                 android:textColor="@color/black"
                 android:textColorHint="#ADADAD"
                 android:textSize="20sp"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"                />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -95,22 +100,31 @@
         android:layout_height="50dp" />
 
     <Button
-        android:id="@+id/login_btn"
+        android:id="@+id/signin_btn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/login_btn"
-        android:text="@string/log_in"
+        android:text="Sing in"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+    <Button
+        android:id="@+id/signup_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/signup_btn"
+        android:text="sign up"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:background="@drawable/google_signinbtn"
+        android:layout_marginTop="50dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
