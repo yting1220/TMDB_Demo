@@ -101,9 +101,9 @@
         android:layout_gravity="center"
         android:background="@drawable/login_btn"
         android:text="@string/log_in"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textStyle="bold" />
     <Space
         android:layout_width="match_parent"
         android:layout_height="50dp" />
