@@ -9,10 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9"
-        android:id="@+id/fragment_holder"/>
+        android:id="@+id/fragmentHolder"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/tmdb_navigation"
+        android:id="@+id/tmdbNavigation"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
