@@ -6,4 +6,6 @@
     <string name="log_in">Log in</string>
     <string name="movie">movie</string>
     <string name="drama">drama</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
