@@ -1,5 +1,6 @@
 package com.example.tmdb_demo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -100,16 +101,13 @@ class TmdbActivity : AppCompatActivity() {
                     val transaction = manager.beginTransaction()
                     transaction.replace(R.id.fragmentHolder, fragment).commit()
                 }
-//                R.id.logout -> {
-//                    Toast.makeText(
-//                        applicationContext,
-//                        "click logout", Toast.LENGTH_SHORT
-//                    ).show()
-//                    val fragment = LoginActivity()
-//                    val manager = supportFragmentManager
-//                    val transaction = manager.beginTransaction()
-//                    transaction.replace(R.id.fragmentHolder, fragment).commit()
-//                }
+                R.id.logout -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "click logout", Toast.LENGTH_SHORT
+                    ).show()
+                    startActivity(Intent(this, LoginActivity::class.java).putExtra("From", "TmdbActivity"))
+                }
             }
             binding.drawerLayout.closeDrawers()
             true
