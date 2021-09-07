@@ -10,7 +10,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import com.example.navigationdrawer.PersonalFragment
 import com.example.navigationdrawer.StarFragment
 import com.example.tmdb_demo.databinding.ActivityTmdbBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TmdbActivity : AppCompatActivity() {
 
@@ -63,13 +62,15 @@ class TmdbActivity : AppCompatActivity() {
 
         //drawer.addDrawerListener 方法是去監聽 drawer views 的事件
         binding.drawerLayout.addDrawerListener(toggle)
-        //呼叫 toggle.syncState() 讓 toggle 和 drawer 的狀態保持一致
+        //呼叫 toggle.syncState() 讓 toggle 和 drawer 的狀態保持一致（漢堡和側邊欄）
         toggle.syncState()
 
         //顯示漢堡
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.navView.setNavigationItemSelectedListener {
+            val manager = supportFragmentManager
+            val transaction = manager.beginTransaction()
             when(it.itemId) {
                 R.id.menu_home -> {
                     Toast.makeText(
@@ -77,8 +78,6 @@ class TmdbActivity : AppCompatActivity() {
                         "click home", Toast.LENGTH_SHORT
                     ).show()
                     val fragment = MovieFragment()
-                    val manager = supportFragmentManager
-                    val transaction = manager.beginTransaction()
                     transaction.replace(R.id.fragmentHolder, fragment).commit()
                 }
                 R.id.menu_star -> {
@@ -87,8 +86,6 @@ class TmdbActivity : AppCompatActivity() {
                         "click star", Toast.LENGTH_SHORT
                     ).show()
                     val fragment = StarFragment()
-                    val manager = supportFragmentManager
-                    val transaction = manager.beginTransaction()
                     transaction.replace(R.id.fragmentHolder, fragment).commit()
                 }
                 R.id.personal_data -> {
@@ -97,8 +94,6 @@ class TmdbActivity : AppCompatActivity() {
                         "click personal", Toast.LENGTH_SHORT
                     ).show()
                     val fragment = PersonalFragment()
-                    val manager = supportFragmentManager
-                    val transaction = manager.beginTransaction()
                     transaction.replace(R.id.fragmentHolder, fragment).commit()
                 }
                 R.id.logout -> {
@@ -123,6 +118,8 @@ class TmdbActivity : AppCompatActivity() {
 //            }
 //            else -> super.onOptionsItemSelected(item)
 //        }
+
+    // 側邊欄收回
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
             return true
