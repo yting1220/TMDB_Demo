@@ -119,7 +119,10 @@ class TmdbActivity : AppCompatActivity() {
 //            else -> super.onOptionsItemSelected(item)
 //        }
 
+<<<<<<< Updated upstream
     // 側邊欄收回
+=======
+>>>>>>> Stashed changes
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
             return true
