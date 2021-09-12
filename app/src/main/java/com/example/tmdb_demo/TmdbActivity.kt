@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.example.navigationdrawer.PersonalFragment
 import com.example.navigationdrawer.StarFragment
+import com.example.tmdb_demo.Utils.RetrofitMovie
 import com.example.tmdb_demo.databinding.ActivityTmdbBinding
 
 class TmdbActivity : AppCompatActivity() {
@@ -24,6 +25,9 @@ class TmdbActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTmdbBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //取得api
+        val api = RetrofitMovie.getRrtrofit()
 
         Log.d(TAG, intent.getStringExtra("From").toString())
 
@@ -119,10 +123,8 @@ class TmdbActivity : AppCompatActivity() {
 //            else -> super.onOptionsItemSelected(item)
 //        }
 
-<<<<<<< Updated upstream
+
     // 側邊欄收回
-=======
->>>>>>> Stashed changes
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
             return true
