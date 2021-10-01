@@ -8,4 +8,7 @@
     <string name="drama">Drama</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="genres">類別</string>
+    <string name="score">評分</string>
+    <string name="title">名稱</string>
 </resources>

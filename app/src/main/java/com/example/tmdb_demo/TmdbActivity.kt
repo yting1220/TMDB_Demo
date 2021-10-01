@@ -9,8 +9,9 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import com.example.navigationdrawer.PersonalFragment
 import com.example.navigationdrawer.StarFragment
-import com.example.tmdb_demo.Utils.RetrofitMovie
 import com.example.tmdb_demo.databinding.ActivityTmdbBinding
+import com.example.tmdb_demo.movie.MovieAdapter
+import com.example.tmdb_demo.movie.MovieFragment
 
 class TmdbActivity : AppCompatActivity() {
 
@@ -26,30 +27,29 @@ class TmdbActivity : AppCompatActivity() {
         binding = ActivityTmdbBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //取得api
-        val api = RetrofitMovie.getRrtrofit()
+        //設定初始時要show哪個fragment
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentHolder, MovieFragment())
+            .commit()
+
 
         Log.d(TAG, intent.getStringExtra("From").toString())
 
         // Bottom Navigation
         with(binding) {
             tmdbNavigation.setOnItemSelectedListener {
+                val manager = supportFragmentManager
+                val transaction = manager.beginTransaction()
                 when (it.itemId) {
                     R.id.navigation_movie -> {
                         Log.d(TAG, "MOVIE")
-                        val manager = supportFragmentManager
-                        val transaction = manager.beginTransaction()
-                        val movieFragment = MovieFragment()
-                        transaction.replace(R.id.fragmentHolder, movieFragment).commit()
+                        transaction.replace(R.id.fragmentHolder, MovieFragment()).commit()
                         transaction.addToBackStack(null)
                         return@setOnItemSelectedListener true
                     }
                     R.id.navigation_drama -> {
                         Log.d(TAG, "Drama")
-                        val manager = supportFragmentManager
-                        val transaction = manager.beginTransaction()
-                        val dramaFragment = DramaFragment()
-                        transaction.replace(R.id.fragmentHolder, dramaFragment).commit()
+                        transaction.replace(R.id.fragmentHolder, DramaFragment()).commit()
                         transaction.addToBackStack(null)
                         return@setOnItemSelectedListener true
                     }
@@ -81,24 +81,21 @@ class TmdbActivity : AppCompatActivity() {
                         applicationContext,
                         "click home", Toast.LENGTH_SHORT
                     ).show()
-                    val fragment = MovieFragment()
-                    transaction.replace(R.id.fragmentHolder, fragment).commit()
+                    transaction.replace(R.id.fragmentHolder, MovieFragment()).commit()
                 }
                 R.id.menu_star -> {
                     Toast.makeText(
                         applicationContext,
                         "click star", Toast.LENGTH_SHORT
                     ).show()
-                    val fragment = StarFragment()
-                    transaction.replace(R.id.fragmentHolder, fragment).commit()
+                    transaction.replace(R.id.fragmentHolder, StarFragment()).commit()
                 }
                 R.id.personal_data -> {
                     Toast.makeText(
                         applicationContext,
                         "click personal", Toast.LENGTH_SHORT
                     ).show()
-                    val fragment = PersonalFragment()
-                    transaction.replace(R.id.fragmentHolder, fragment).commit()
+                    transaction.replace(R.id.fragmentHolder, PersonalFragment()).commit()
                 }
                 R.id.logout -> {
                     Toast.makeText(

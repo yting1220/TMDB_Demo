@@ -1,5 +1,6 @@
 package com.example.tmdb_demo.Utils
 
+import com.example.tmdb_demo.BuildConfig
 import com.example.tmdb_demo.DataResponse.MoviePopularResponse
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -12,13 +13,13 @@ interface RetrofitMovie {
     companion object {
         fun getRrtrofit(): RetrofitMovie? {
             return Retrofit.Builder()
-                .baseUrl("https://api.themoviedb.org/3/movie/")
+                .baseUrl(BuildConfig.API_SERVER)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(RetrofitMovie::class.java)
         }
     }
-    @GET("popular")
+    @GET("movie/popular")
     fun getpopmovie(
         @Query("api_key") api_key: String="affcd470da3f0ef01b930fad1a75d1ed",
         @Query("language") language: String = "en-US",
