@@ -20,7 +20,7 @@ interface RetrofitMovie {
         }
     }
     @GET("movie/popular")
-    fun getpopmovie(
+    fun getpopularMovie(
         @Query("api_key") api_key: String="affcd470da3f0ef01b930fad1a75d1ed",
         @Query("language") language: String = "en-US",
         @Query("page") page: Int

@@ -22,8 +22,10 @@ class MovieFragment : Fragment() {
         return binding.root.apply {
             // Get Data and then Display it
 
-            for (i in 'a'..'z') {
-                genresData.add(MovieData("測試$i","",""))
+            val genresList = listOf("Popular", "Now playing", "Upcoming", "Top rated")
+
+            for (i in genresList) {
+                genresData.add(MovieData(i,"",""))
             }
             for (i in 1..5) {
                 nestedData.add(MovieData("", "電影$i",i.toString()))

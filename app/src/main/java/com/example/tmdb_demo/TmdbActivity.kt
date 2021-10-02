@@ -32,7 +32,6 @@ class TmdbActivity : AppCompatActivity() {
             .replace(R.id.fragmentHolder, MovieFragment())
             .commit()
 
-
         Log.d(TAG, intent.getStringExtra("From").toString())
 
         // Bottom Navigation
